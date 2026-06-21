@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:blue_dye",
+    "minecraft:brick_stairs"
+  ],
+  "result": {
+    "count": 1,
+    "id": "coloredbricks:blue_brick_stairs"
+  }
+}

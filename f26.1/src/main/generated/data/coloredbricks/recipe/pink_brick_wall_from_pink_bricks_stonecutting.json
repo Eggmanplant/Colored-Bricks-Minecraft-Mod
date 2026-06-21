@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "coloredbricks:pink_bricks",
+  "result": {
+    "count": 1,
+    "id": "coloredbricks:pink_brick_wall"
+  }
+}

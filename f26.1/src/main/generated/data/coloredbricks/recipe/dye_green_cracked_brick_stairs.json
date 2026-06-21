@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:green_dye",
+    "coloredbricks:cracked_brick_stairs"
+  ],
+  "result": {
+    "count": 1,
+    "id": "coloredbricks:green_cracked_brick_stairs"
+  }
+}

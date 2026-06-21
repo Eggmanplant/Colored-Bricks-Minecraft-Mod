@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:black_dye",
+    "minecraft:brick_slab"
+  ],
+  "result": {
+    "count": 1,
+    "id": "coloredbricks:black_brick_slab"
+  }
+}

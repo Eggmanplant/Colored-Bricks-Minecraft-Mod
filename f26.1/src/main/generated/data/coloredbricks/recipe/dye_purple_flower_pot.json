@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:purple_dye",
+    "minecraft:flower_pot"
+  ],
+  "result": {
+    "count": 1,
+    "id": "coloredbricks:purple_flower_pot"
+  }
+}

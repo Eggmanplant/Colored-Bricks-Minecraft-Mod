@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:magenta_dye",
+    "coloredbricks:cracked_brick_slab"
+  ],
+  "result": {
+    "count": 1,
+    "id": "coloredbricks:magenta_cracked_brick_slab"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "coloredbricks:purple_cracked_bricks",
+  "result": {
+    "count": 1,
+    "id": "coloredbricks:purple_cracked_brick_stairs"
+  }
+}

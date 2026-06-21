@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "coloredbricks:lime_bricks",
+  "result": {
+    "count": 1,
+    "id": "coloredbricks:lime_chiseled_bricks"
+  }
+}

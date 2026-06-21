@@ -1,0 +1,79 @@
+package net.pinary_pi.coloredbricks;
+
+import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.client.color.world.BiomeColors;
+import net.minecraft.client.render.BlockRenderLayer;
+import net.minecraft.registry.Registries;
+import net.minecraft.util.DyeColor;
+import net.minecraft.util.Identifier;
+import net.minecraft.world.biome.GrassColors;
+import net.pinary_pi.coloredbricks.setup.ModBlocks;
+import net.pinary_pi.coloredbricks.setup.list.PottedContent;
+
+public class ColoredBricksClient implements ClientModInitializer {
+    @Override
+    public void onInitializeClient(){
+/*
+        BlockRenderLayerMap.putBlock(ModBlocks.WHITE_FLOWER_POT, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.ORANGE_FLOWER_POT, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.PINK_FLOWER_POT, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.YELLOW_FLOWER_POT, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.LIME_FLOWER_POT, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.GREEN_FLOWER_POT, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.LIGHT_BLUE_FLOWER_POT, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.CYAN_FLOWER_POT, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.BLUE_FLOWER_POT, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.MAGENTA_FLOWER_POT, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.PURPLE_FLOWER_POT, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.BROWN_FLOWER_POT, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.LIGHT_GRAY_FLOWER_POT, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.GRAY_FLOWER_POT, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.BLACK_FLOWER_POT, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.RED_FLOWER_POT, BlockRenderLayer.CUTOUT);
+*/
+        for (PottedContent content : PottedContent.values()) {
+            for (DyeColor dyeColor : DyeColor.values()) {
+                String color = dyeColor.name().toLowerCase();
+                Block emptyPot = Registries.BLOCK.get(Identifier.of(ColoredBricks.MOD_ID, color + "_flower_pot"));
+                String potted_name = Registries.ITEM.getId(emptyPot.asItem()).getPath().replace("flower_pot", "potted_") + content.getFlowerName();
+                Block potted_block = Registries.BLOCK.get(Identifier.of(ColoredBricks.MOD_ID, potted_name));
+                // ColoredBricks.LOGGER.info(ColoredBricks.MOD_ID + ":" + potted_name);
+//                BlockRenderLayerMap.putBlock(potted_block, BlockRenderLayer.CUTOUT);
+            }
+        }
+
+        renderPottedFern(getPottedFernVersion(ModBlocks.WHITE_BRICKS));
+        renderPottedFern(getPottedFernVersion(ModBlocks.ORANGE_BRICKS));
+        renderPottedFern(getPottedFernVersion(ModBlocks.PINK_BRICKS));
+        renderPottedFern(getPottedFernVersion(ModBlocks.YELLOW_BRICKS));
+        renderPottedFern(getPottedFernVersion(ModBlocks.LIME_BRICKS));
+        renderPottedFern(getPottedFernVersion(ModBlocks.GREEN_BRICKS));
+        renderPottedFern(getPottedFernVersion(ModBlocks.LIGHT_BLUE_BRICKS));
+        renderPottedFern(getPottedFernVersion(ModBlocks.CYAN_BRICKS));
+        renderPottedFern(getPottedFernVersion(ModBlocks.BLUE_BRICKS));
+        renderPottedFern(getPottedFernVersion(ModBlocks.MAGENTA_BRICKS));
+        renderPottedFern(getPottedFernVersion(ModBlocks.PURPLE_BRICKS));
+        renderPottedFern(getPottedFernVersion(ModBlocks.BROWN_BRICKS));
+        renderPottedFern(getPottedFernVersion(ModBlocks.LIGHT_GRAY_BRICKS));
+        renderPottedFern(getPottedFernVersion(ModBlocks.GRAY_BRICKS));
+        renderPottedFern(getPottedFernVersion(ModBlocks.BLACK_BRICKS));
+        renderPottedFern(getPottedFernVersion(ModBlocks.RED_BRICKS));
+    }
+
+    private static void renderPottedFern(Block block) {
+/*        BlockColorRegistry.register((state, reader, pos, tintIndex) ->
+            reader != null && pos != null
+            ? BiomeColors.getGrassColor(reader, pos)
+            : GrassColors.getColor(0.5D, 1.0D),
+            block);
+*/
+    }
+
+    private static Block getPottedFernVersion(Block block) {
+        String block_id = Registries.BLOCK.getId(block).getPath();
+        String pot_id = block_id.replace("bricks", "potted_fern");
+        return Registries.BLOCK.get(Identifier.of(ColoredBricks.MOD_ID, pot_id));
+    }
+}
